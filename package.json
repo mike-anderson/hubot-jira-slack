@@ -1,7 +1,7 @@
 {
   "name": "hubot-jira-connector",
   "description": "Use jira-connector with Hubot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Duologic <jeroen+npmjs@simplistic.be>",
   "license": "Creative Commons Attribution-ShareAlike 4.0 International License",
 
@@ -9,11 +9,11 @@
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-hubot-jira-connector.git"
+    "url": "git://github.com/duologic/hubot-jira-connector.git"
   },
 
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-hubot-jira-connector/issues"
+    "url": "https://github.com/duologic/hubot-jira-connector/issues"
   },
 
   "dependencies": {
