@@ -14,9 +14,6 @@
 #   hubot comments for ticket <ticket> - get comments for <ticket>
 #   ... <ticket> .. - return link, summary, reporter and priority of <ticket>
 #
-# Author:
-#   Duologic <jeroen@simplistic.be>
-#
 
 module.exports = (robot) ->
   fs = require 'fs'
