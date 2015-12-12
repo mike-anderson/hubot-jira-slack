@@ -1,7 +1,7 @@
 {
   "name": "hubot-hubot-jira-connector",
   "description": "Use jira-connector with Hubot",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Duologic <jeroen@simplistic.be>",
   "license": "MIT",
 
@@ -17,6 +17,7 @@
   },
 
   "dependencies": {
+   "jira-connector": "1.11.0"
   },
 
   "peerDependencies": {
