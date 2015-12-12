@@ -3,7 +3,7 @@
   "description": "Use jira-connector with Hubot",
   "version": "0.0.1",
   "author": "Duologic <jeroen@simplistic.be>",
-  "license": "MIT",
+  "license": "Creative Commons Attribution-ShareAlike 4.0 International License",
 
   "keywords": "hubot, hubot-scripts, jira, rest, oauth",
 
