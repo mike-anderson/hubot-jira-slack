@@ -1,5 +1,5 @@
 {
-  "name": "hubot-hubot-jira-connector",
+  "name": "hubot-jira-connector",
   "description": "Use jira-connector with Hubot",
   "version": "0.0.1",
   "author": "Duologic <jeroen+npmjs@simplistic.be>",
