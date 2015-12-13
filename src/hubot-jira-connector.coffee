@@ -87,35 +87,25 @@ module.exports = (robot) ->
         res.send "<https://#{host}/browse/#{key}|#{key}>: #{summary}\n
 Reporter: *#{reporter}*   Priority: *#{priority}*"
 
-  match = 0
-
   robot.respond /list jira projects/, (res) ->
-    if match == 0
-      match += 1
-      res.send projects
-    return
+    res.send projects
 
   robot.respond /debug ticket (.+)/, (res) ->
-    if match == 0
-      match += 1
-      print_ticket res.match[1], res, true
-    return
+    print_ticket res.match[1], res, true
 
   robot.respond /comments for ticket (.+)/, (res) ->
-    if match == 0
-      match += 1
-      get_ticket res.match[1], (issue) ->
-        issuekey = issue.key
-        comments = issue.fields.comment.comments
-        str = "Comments for #{issuekey}:\n"
-        for comment in comments
-          author = comment.author.displayName
-          body = comment.body
-          str += "*#{author}:* #{body}\n--\n"
-        res.send str
-    return
+    get_ticket res.match[1], (issue) ->
+      issuekey = issue.key
+      comments = issue.fields.comment.comments
+      str = "Comments for #{issuekey}:\n"
+      for comment in comments
+        author = comment.author.displayName
+        body = comment.body
+        str += "*#{author}:* #{body}\n--\n"
+      res.send str
 
-  robot.hear /.+/, (res) ->
-    if match == 0
-      match += 1
+  robot.hear /.*/, (res) ->
+    # only respond if not directed at hubot
+    robot_name = robot.alias or robot.name
+    if (res.message.text.indexOf robot_name) != 0
       p = find_ticket_in_text res.message.text, res
