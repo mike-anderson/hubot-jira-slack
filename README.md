@@ -29,7 +29,7 @@ Following environment variables are required before running:
 ```
 export HUBOT_JIRA_CONNECTOR_HOST=company.atlassian.net
 export HUBOT_JIRA_CONNECTOR_PRIVATE_KEY=/path/to/private-key.pem
-export HUBOT_JIRA_CONNECTOR_CONSUMER_KEY=<key confirgured in jira>
+export HUBOT_JIRA_CONNECTOR_CONSUMER_KEY=<key configured in jira>
 export HUBOT_JIRA_CONNECTOR_TOKEN=<token from jira>
 export HUBOT_JIRA_CONNECTOR_TOKEN_SECRET=<token secret from jira>
 ```
