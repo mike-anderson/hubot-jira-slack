@@ -54,7 +54,7 @@ Mention an issue (in capitalized format) in any channel that hubot is listening 
 
  ![Issue Summary](http://andersonapps.ca/readme_embeds/hubot-jira-slack/letstalkabout.png)
 
- ### Describe Issue
+### Describe Issue
 
 Get a more complete summary of an issue by asking hubot directly: `hubot describe <ISSUE-KEY>`
 
