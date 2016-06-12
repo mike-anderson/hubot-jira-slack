@@ -1,19 +1,19 @@
 {
-  "name": "hubot-jira-connector",
-  "description": "Use jira-connector with Hubot",
-  "version": "0.0.3",
-  "author": "Duologic <jeroen+npmjs@simplistic.be>",
+  "name": "hubot-jira-slack",
+  "description": "Use jira-connector with Hubot, with improvements for slack. Based on hubot-jira-connector by Duologic",
+  "version": "0.0.1",
+  "author": "Mike Anderson <mike@andersonappsc.ca>",
   "license": "Creative Commons Attribution-ShareAlike 4.0 International License",
 
-  "keywords": "hubot, hubot-scripts, jira, rest, oauth",
+  "keywords": "hubot, hubot-scripts, jira, rest, oauth, slack",
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/duologic/hubot-jira-connector.git"
+    "url": "git://github.com/mike-anderson/hubot-jira-slack.git"
   },
 
   "bugs": {
-    "url": "https://github.com/duologic/hubot-jira-connector/issues"
+    "url": "https://github.com/duologic/hubot-jira-slack/issues"
   },
 
   "dependencies": {
@@ -25,23 +25,9 @@
   },
 
   "devDependencies": {
-    "chai": "^2.1.1",
     "coffee-script": "1.6.3",
-    "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-mocha-test": "~0.12.7",
-    "grunt-release": "~0.11.0",
-    "hubot": "2.x",
-    "matchdep": "~0.3.0",
-    "mocha": "^2.1.0",
-    "sinon": "^1.13.0",
-    "sinon-chai": "^2.7.0"
+    "hubot": "2.x"
   },
 
-  "main": "index.coffee",
-
-  "scripts": {
-    "test": "grunt test"
-  }
+  "main": "index.coffee"
 }
