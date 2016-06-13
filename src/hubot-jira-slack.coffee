@@ -46,14 +46,14 @@ module.exports = (robot) ->
     projects = (category.key for category in categories)
 
 
-  is_possible_ticket = (string) ->
+  is_possible_issue = (string) ->
     for project in projects
       if (string.indexOf project) == 0
         return true
     return false
 
 
-  get_ticket = (key, callback) ->
+  get_issue = (key, callback) ->
     opts =
         issueKey: key
     jira.issue.getIssue opts, (error, issue) ->
@@ -61,16 +61,16 @@ module.exports = (robot) ->
         callback(issue)
 
 
-  find_ticket_in_text = (text, res) ->
+  find_issue_in_text = (text, res) ->
     words = text.split(' ')
     for word in words
       words = words.concat(word.split('/'))
     for word in unique_array(words)
-      if is_possible_ticket(word)
-        print_ticket(word, res)
+      if is_possible_issue(word)
+        print_issue(word, res)
 
 
-  format_ticket = (issue, includeFields) -> 
+  format_issue = (issue, includeFields) -> 
     fields = 
       issueKey:
         title: "Key"
@@ -132,18 +132,18 @@ module.exports = (robot) ->
     return formattedAttchment
 
 
-  print_ticket = (key, res, includeFields=['assignee','status'], debug=false) ->
-    get_ticket key, (issue) ->
+  print_issue = (key, res, includeFields=['assignee','status'], debug=false) ->
+    get_issue key, (issue) ->
       if debug
         res.send JSON.stringify issue, null, 2
       else
         robot.emit 'slack.attachment',
           channel: res.envelope.room
-          attachments: format_ticket issue, includeFields
+          attachments: format_issue issue, includeFields
             
 
   print_comments = (key, res) ->
-    get_ticket key, (issue) ->
+    get_issue key, (issue) ->
       issuekey = issue.key
       comments = issue.fields.comment.comments
 
@@ -168,12 +168,12 @@ module.exports = (robot) ->
       }
 
 
-  print_ticket_search = (search, res) ->
+  print_issue_search = (search, res) ->
     opts = 
       jql:"text ~ \"#{search}\"" 
       maxResults: 10
     jira.search.search opts, (err, response) ->
-      issues = (format_ticket issue, [] for issue in response.issues)
+      issues = (format_issue issue, [] for issue in response.issues)
       if issues.length > 0
         robot.emit 'slack.attachment', {
           channel: res.envelope.room,
@@ -184,18 +184,18 @@ module.exports = (robot) ->
 
 
   robot.respond /debug issue ([A-Z]+-[0-9]+)/, (res) ->
-    print_ticket res.match[1], res, null, true
+    print_issue res.match[1], res, null, true
 
   robot.respond /comments for ([A-Z]+-[0-9]+)/, (res) ->
     print_comments res.match[1], res
 
   robot.respond /describe ([A-Z]+-[0-9]+)/, (res) ->
-    print_ticket res.match[1], res, ['assignee','status','reporter','priority','description']
+    print_issue res.match[1], res, ['assignee','status','reporter','priority','description']
 
   robot.respond /((what|find( me)*|show( me)*) issues (with|contain(ing)*) ")(.+)("(\?*))/, (res) ->
     group = res.match[7]
     if group and group.length > 0
-      print_ticket_search group, res
+      print_issue_search group, res
     else 
       res.reply "I don't know what you want me to find, sorry"
 
@@ -203,4 +203,4 @@ module.exports = (robot) ->
     # only respond if not directed at hubot
     robot_name = robot.alias or robot.name
     if (res.message.text.indexOf robot_name) != 0
-      p = find_ticket_in_text res.message.text, res
+      p = find_issue_in_text res.message.text, res
