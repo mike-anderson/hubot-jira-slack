@@ -37,12 +37,13 @@ export HUBOT_JIRA_CONNECTOR_TOKEN_SECRET=<token secret from jira>
 ### Issue Summaries
 
 Mention an issue (in capitalized format) in any channel that hubot is listening on to get a short summar of an issue: 
- - Issue Key
- - Issue Name
- - Assignee
- - Status
 
- Issue type is denoted by the attachement color
+- Issue Key
+- Issue Name
+- Assignee
+- Status
+
+Issue type is denoted by the attachement color
 
 | Issue Type    | Color         | Hex Code |
 | ------------- | ------------- | -------- |
@@ -52,7 +53,7 @@ Mention an issue (in capitalized format) in any channel that hubot is listening 
 | Task          | Blue          | #3498db  |
 | Sub-Task      | Black         | #34495e  |
 
- ![Issue Summary](http://andersonapps.ca/readme_embeds/hubot-jira-slack/letstalkabout.png)
+![Issue Summary](http://mike-anderson.github.io/readme_embeds/hubot-jira-slack/letstalkabout.png)
 
 ### Describe Issue
 
@@ -66,13 +67,13 @@ Get a more complete summary of an issue by asking hubot directly: `hubot describ
 - Priority
 - Description
 
-![Issue Description](http://andersonapps.ca/readme_embeds/hubot-jira-slack/describe.png)
+![Issue Description](http://mike-anderson.github.io/readme_embeds/hubot-jira-slack/describe.png)
 
 ### Get Issue Comments
 
 Get issue comments for by asking hubot directly: `hubot commends for <ISSUE-KEY>`
 
-![Comments](http://andersonapps.ca/readme_embeds/hubot-jira-slack/comments.png)
+![Comments](http://mike-anderson.github.io/readme_embeds/hubot-jira-slack/comments.png)
 
 ### Find Issues
 
@@ -88,7 +89,7 @@ other variants of the question will work
 
 The JQL query executed is: `text ~ "<TEXT>"`
 
-![Find Issues](http://andersonapps.ca/readme_embeds/hubot-jira-slack/find.png)
+![Find Issues](http://mike-anderson.github.io/readme_embeds/hubot-jira-slack/find.png)
 
 
 # Changes from hubot-jira-connector
