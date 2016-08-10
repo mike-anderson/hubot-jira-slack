@@ -110,7 +110,7 @@ module.exports = (robot) ->
 
     text = "*<https://#{host}/browse/#{issueKey}|#{issueKey}: #{summary}>*"
     plaintext = "#{issueKey}: #{summary}"
-    displayFields = includeFields.map (key) -> fields[key] 
+    displayFields = (fields[key] for key in includeFields)
     issueColour = switch issueType
       when "Story" then "#2ecc71"
       when "Bug" then "#e74c3c"
@@ -137,9 +137,13 @@ module.exports = (robot) ->
       if debug
         res.send JSON.stringify issue, null, 2
       else
-        robot.emit 'slack.attachment',
-          channel: res.envelope.room
-          attachments: format_issue issue, includeFields
+        attachment = format_ticket issue, includeFields
+        res.send { 
+          room: res.envelope.room 
+        },{
+          attachments: [attachment],
+          as_user: true
+        }
             
 
   print_comments = (key, res) ->
@@ -162,9 +166,11 @@ module.exports = (robot) ->
           pretext: "There are no comments for #{issuekey}"
         }]
 
-      robot.emit 'slack.attachment', {
-        channel: res.envelope.room,
-        attachments: commentAttachments
+      res.send { 
+        room: res.envelope.room 
+      },{
+        attachments: commentAttachments,
+        as_user: true
       }
 
 
@@ -175,9 +181,11 @@ module.exports = (robot) ->
     jira.search.search opts, (err, response) ->
       issues = (format_issue issue, [] for issue in response.issues)
       if issues.length > 0
-        robot.emit 'slack.attachment', {
-          channel: res.envelope.room,
-          attachments: issues
+        res.send { 
+          room: res.envelope.room 
+        },{
+          attachments: issues,
+          as_user: true
         }
       else
         res.reply "I can't find anything"  
