@@ -71,7 +71,7 @@ Get a more complete summary of an issue by asking hubot directly: `hubot describ
 
 ### Get Issue Comments
 
-Get issue comments for by asking hubot directly: `hubot commends for <ISSUE-KEY>`
+Get issue comments for by asking hubot directly: `hubot comments for <ISSUE-KEY>`
 
 ![Comments](http://mike-anderson.github.io/readme_embeds/hubot-jira-slack/comments.png)
 
