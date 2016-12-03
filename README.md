@@ -53,7 +53,7 @@ Issue type is denoted by the attachement color
 | Task          | Blue          | #3498db  |
 | Sub-Task      | Black         | #34495e  |
 
-![Issue Summary](http://mike-anderson.github.io/readme_embeds/hubot-jira-slack/letstalkabout.png)
+![Issue Summary](https://cloud.githubusercontent.com/assets/209407/20862691/8f8df6de-b966-11e6-99f3-5fcc2d6e1c84.png)
 
 ### Describe Issue
 
@@ -67,13 +67,13 @@ Get a more complete summary of an issue by asking hubot directly: `hubot describ
 - Priority
 - Description
 
-![Issue Description](http://mike-anderson.github.io/readme_embeds/hubot-jira-slack/describe.png)
+![Issue Description](https://cloud.githubusercontent.com/assets/209407/20862690/8f8d26b4-b966-11e6-9f62-4b90b7b7aafa.png)
 
 ### Get Issue Comments
 
 Get issue comments for by asking hubot directly: `hubot comments for <ISSUE-KEY>`
 
-![Comments](http://mike-anderson.github.io/readme_embeds/hubot-jira-slack/comments.png)
+![Comments](https://cloud.githubusercontent.com/assets/209407/20862689/8f8cb7ba-b966-11e6-9770-3e612e6facd8.png)
 
 ### Find Issues
 
@@ -89,7 +89,7 @@ other variants of the question will work
 
 The JQL query executed is: `text ~ "<TEXT>"`
 
-![Find Issues](http://mike-anderson.github.io/readme_embeds/hubot-jira-slack/find.png)
+![Find Issues](https://cloud.githubusercontent.com/assets/209407/20862688/8f8c951e-b966-11e6-9f93-aa2a085b7fe4.png)
 
 
 # Changes from hubot-jira-connector
