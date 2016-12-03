@@ -2,7 +2,7 @@
 
 # hubot-jira-slack
 
-Based on [hubot-jira-connector](https://github.com/Duologic/hubot-jira-connector), use [jira-connector](https://www.npmjs.com/package/jira-connector) with Hubot, specifically adapted for Slack.
+Based on [Duologic/hubot-jira-connector](https://github.com/Duologic/hubot-jira-connector), use [jira-connector](https://www.npmjs.com/package/jira-connector) with Hubot, specifically adapted for Slack.
 
 ## Installation
 
